@@ -4,18 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a008df6a-276b-4cba-8f22-6028911d3435" name="更改" comment="" />
+    <list default="true" id="a008df6a-276b-4cba-8f22-6028911d3435" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/paper_img/fig5_Architecture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/01_CycleGuardian.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/01_CycleGuardian.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/To_fix_README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_lab8_6_3CycleGuardian_2cls.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_lab8_6_3CycleGuardian_2cls.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2l6VRTYXITbqMxNsAeRPCzakCrj" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -24,9 +35,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/media/respecting_god/S2/00_local_repository/01_CycleGuardian/paper_img"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/paper_img" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -43,6 +60,46 @@
       <option name="presentableId" value="Default" />
       <updated>1724500506169</updated>
       <workItem from="1724500507868" duration="1488000" />
+      <workItem from="1724542655984" duration="149000" />
+      <workItem from="1724594597255" duration="1198000" />
+      <workItem from="1724647154630" duration="599000" />
+      <workItem from="1724679398194" duration="208000" />
+      <workItem from="1724716201366" duration="20000" />
+      <workItem from="1724760371660" duration="599000" />
+      <workItem from="1724915567820" duration="599000" />
+      <workItem from="1724996802816" duration="599000" />
+      <workItem from="1725083616561" duration="599000" />
+      <workItem from="1725106742734" duration="599000" />
+      <workItem from="1725170190368" duration="629000" />
+      <workItem from="1725236314192" duration="599000" />
+      <workItem from="1725257409854" duration="853000" />
+      <workItem from="1725278571323" duration="611000" />
+      <workItem from="1725322144944" duration="609000" />
+      <workItem from="1725342011335" duration="599000" />
+      <workItem from="1725365633154" duration="172000" />
+      <workItem from="1725365869786" duration="599000" />
+      <workItem from="1725409388294" duration="124000" />
+      <workItem from="1725409527199" duration="44000" />
+      <workItem from="1725409662006" duration="170000" />
+      <workItem from="1725409837962" duration="323000" />
+      <workItem from="1725762910687" duration="597000" />
+      <workItem from="1726013860041" duration="599000" />
+      <workItem from="1726145790470" duration="344000" />
+      <workItem from="1726186569132" duration="599000" />
+      <workItem from="1726212642693" duration="599000" />
+      <workItem from="1726232024816" duration="776000" />
+      <workItem from="1726318042628" duration="599000" />
+      <workItem from="1726367584483" duration="599000" />
+      <workItem from="1726401702718" duration="599000" />
+      <workItem from="1726617716911" duration="599000" />
+      <workItem from="1726889093669" duration="641000" />
+      <workItem from="1726963745942" duration="599000" />
+      <workItem from="1727072145999" duration="6000" />
+      <workItem from="1727139595830" duration="22000" />
+      <workItem from="1727162639001" duration="656000" />
+      <workItem from="1727337901849" duration="5000" />
+      <workItem from="1727440844381" duration="598000" />
+      <workItem from="1738485842472" duration="4904000" />
     </task>
     <servers />
   </component>

@@ -22,7 +22,6 @@
 #2-1 预训练中，引入对比学习；
 
 # 2-2,  4 frames 使用 transformer Encode;  10 frames 使用 clustering;  都引入对比学习方式；
-
 #based on 2-2-6,网络， 但是对4 frames, trans只使用对比损失， 对10frames 只使用cluster, sim loss；
 # 并且开始引入，EMA 的方式；
 

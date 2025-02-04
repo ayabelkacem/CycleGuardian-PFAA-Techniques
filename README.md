@@ -1,6 +1,6 @@
 Local changes
 # CycleGuardian 
-This is the official implementation of the work **[CycleGuardian](https://arxiv.org/abs/2025)**.
+This is the official implementation of the work **[CycleGuardian:A Framework for Automatic RespiratorySound classification Based on Improved Deep clustering and Contrastive Learning](https://arxiv.org/abs/2502.00734)**.
 
 # 1.Dependencies:
 
@@ -151,7 +151,7 @@ ds combine best_Confusion_matrix:
       title={ycleGuardian: A Framework for Automatic RespiratorySound classification Based on Improved Deep clustering andContrastive Learning}, 
       author={Yun Chu,Qiuhao Wang, Enze Zhou, Ling Fu, Qian Liu, Gang Zheng},
       year={2025},
-      eprint={2025.6172348},
+      eprint={2025.00734},
       archivePrefix={arXiv},
       primaryClass={cs.AI}
 }

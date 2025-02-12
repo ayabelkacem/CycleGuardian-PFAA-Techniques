@@ -1,18 +1,22 @@
-Local changes
 # CycleGuardian 
-This is the official implementation of the work **[CycleGuardian:A Framework for Automatic RespiratorySound classification Based on Improved Deep clustering and Contrastive Learning](https://arxiv.org/abs/2502.00734)**.
+This is the implementation of the work **[CycleGuardian:A Framework for Automatic RespiratorySound classification Based on Improved Deep clustering and Contrastive Learning](https://arxiv.org/abs/2502.00734)**. 
+
+If you like it give it star.
+
 
 # 1.Dependencies:
 
 ```
-* Python3.8
-torch                     1.11.0                   pypi_0    pypi
-torchaudio                0.11.0                   pypi_0    pypi
-torchlibrosa              0.1.0                    pypi_0    pypi
-torchvision               0.12.0                   pypi_0    pypi
-* cudnn (CUDA for training on GPU)
+python3.8.18
+#
+# Name                    Version                   Build  Channel
+pytorch-wavelets          1.3.0                    pypi_0    pypi
+torch                     2.0.1                    pypi_0    pypi
+torch-geometric           2.5.3                    pypi_0    pypi
+torchaudio                2.0.2                    pypi_0    pypi
+torchvision               0.15.2                   pypi_0    pypi
 ```
-Dependencies are listed in `cycle_requirements.txt`.
+Dependencies are listed in `torch2.0.1_requirements.txt`.
 These are all easily installable via, e.g., `pip install numpy` or `conda install`. 
 It is recommended to use Anaconda to create a `virtual` environment and setup the dependencies .
 

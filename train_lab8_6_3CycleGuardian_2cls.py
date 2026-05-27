@@ -45,7 +45,13 @@ from sklearn.metrics import confusion_matrix, accuracy_score, f1_score, precisio
 from  torch.utils.tensorboard import SummaryWriter
 from  torchvision import  transforms
 #from config.augmentation import SpecAugment
-from timm.utils.model_ema import ModelEmaV2, ModelEmaV3
+try:
+    from timm.utils.model_ema import ModelEmaV2, ModelEmaV3
+except ImportError:
+    # timm<=0.4.x provides ModelEmaV2 but not ModelEmaV3
+    from timm.utils.model_ema import ModelEmaV2
+
+    ModelEmaV3 = ModelEmaV2
 
 from ICBHIDataset_v5_1 import *
 from nets.CycleGuardian_v5_1_3_cls2 import group_uni_net as create_model

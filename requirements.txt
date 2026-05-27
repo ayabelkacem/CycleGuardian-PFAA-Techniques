@@ -1,0 +1,16 @@
+# Minimal runtime deps for Kaggle/Colab (avoid pinning torch/torchvision/torchaudio)
+numpy
+pandas
+scikit-learn
+matplotlib
+tqdm
+librosa
+soundfile
+soxr
+nlpaug
+nnAudio
+pytorch-wavelets
+opencv-python
+cmapy
+timm
+tensorboard

@@ -520,8 +520,13 @@ class GuardianNet(nn.Module):
 
         s20_rep_vec = []
         for i in range(self.max_clusters):  # (bt, num_groups, embed_dim) 该向量中是一个布尔类型，表明的是属于当前簇上group 置位True;
-            s20_mask = (s20_cluster_ids == i).unsqueeze(2).expand_as(scale20_tcn_state).cuda()
-            s20_cluster_features = torch.where(s20_mask, scale20_tcn_state, torch.tensor(0.).cuda())
+            device = scale20_tcn_state.device
+            s20_mask = (s20_cluster_ids == i).unsqueeze(2).expand_as(scale20_tcn_state).to(device)
+            s20_cluster_features = torch.where(
+                s20_mask,
+                scale20_tcn_state,
+                torch.tensor(0.0, device=device, dtype=scale20_tcn_state.dtype),
+            )
             s20_clu_fea = self.s20_group_cluster_fusion(s20_cluster_features)
             s20_rep_vec.append(s20_clu_fea)  # s20_cluster_features,全0 输入到 其中之后，出现tensor(1135651., grad_fn=<MaxBackward1>) tensor(-828582.3125, grad_fn=<MinBackward1>)
 
@@ -590,14 +595,15 @@ class GroupMixConLoss(nn.Module):
 
     def forward(self, projection1, projection2, labels_a, labels_b, lam, index,):
         batch_size = projection1.shape[0]
+        device = projection1.device
         # proj: (bt, embed_dim)
         projection1, projection2 = F.normalize(projection1), F.normalize(projection2)
 
         # 先进行归一化， 然后计算两个 proj 的之间的相似性， (bt, bt ) = （bt, embed_dim）矩阵乘  (embed_dim, bt)
         anchor_dot_contrast = torch.div(torch.matmul(projection2, projection1.T), self.temperature) # 除以温度系数；
 
-        mask_a = torch.eye(batch_size).cuda() # 创建单位矩阵， 即对角线矩阵为1， 其余为0；
-        mask_b = torch.zeros(batch_size, batch_size).cuda()  # 初始化0矩阵；
+        mask_a = torch.eye(batch_size, device=device)  # 创建单位矩阵， 即对角线矩阵为1， 其余为0；
+        mask_b = torch.zeros(batch_size, batch_size, device=device)  # 初始化0矩阵；
         mask_b[torch.arange(batch_size).unsqueeze(1), index.view(-1, 1)] = 1 # 根据 index 张量， mask_b 被修改为在特定位置具有1。
         # 此时的mask_b  每一行， 代表的原始batch 中， 第几个样本；
         # 即mask_b 中第i 行，代表原始batch 中第 i 个样本； 而其中的每一行中，第j列数据为1，表示的是使用原始batch 中第j个样本；
@@ -622,7 +628,7 @@ class GroupMixConLoss(nn.Module):
         # 如果 args 中的 negative_pair 设置为“diff_label”，则会应用附加掩码来排除具有相同标签的投影对。
         if self.negative_pair == 'diff_label':
             labels_a = labels_a.contiguous().view(-1, 1)
-            logits_mask = torch.ne(labels_a, labels_a.T).cuda() + (mask_a.bool() + mask_b.bool())
+            logits_mask = torch.ne(labels_a, labels_a.T).to(device) + (mask_a.bool() + mask_b.bool())
             exp_logits *= logits_mask.float()
 
 

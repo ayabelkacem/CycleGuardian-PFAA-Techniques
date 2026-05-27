@@ -82,13 +82,37 @@ def get_annotations(data_dir):
         filenames: file name
         rec_annotations_dict: audio recording annotation dict
     """
-    filenames = [s.split('.')[0] for s in os.listdir(data_dir) if '.txt' in s]
+    # Only keep real recording annotations: a corresponding .wav must exist and
+    # the filename must follow the ICBHI pattern with 5 underscore-delimited fields.
+    filenames = []
     i_list = []
     rec_annotations_dict = {}
-    for s in filenames:
-        i, a = Extract_Annotation_Data(s, data_dir)
+    for entry in os.listdir(data_dir):
+        if not entry.lower().endswith('.txt'):
+            continue
+
+        base = os.path.splitext(entry)[0]
+        wav_path = os.path.join(data_dir, base + '.wav')
+        if not os.path.exists(wav_path):
+            # e.g., Readme.txt
+            continue
+
+        if len(base.split('_')) != 5:
+            continue
+
+        i, a = Extract_Annotation_Data(base, data_dir)
+        filenames.append(base)
         i_list.append(i)
-        rec_annotations_dict[s] = a
+        rec_annotations_dict[base] = a
+
+    if len(filenames) == 0:
+        raise RuntimeError(
+            f"No per-recording annotation .txt files were found in '{data_dir}'. "
+            "This dataset loader expects ICBHI-style annotation files next to the .wav recordings, "
+            "e.g. '101_1b1_Al_sc_Meditron.txt' (tab-separated columns: Start, End, Crackles, Wheezes). "
+            "Please download the full ICBHI 2017 dataset and place the annotation .txt files in the same folder "
+            "as the .wav files."
+        )
 
     recording_info = pd.concat(i_list, axis=0)
     recording_info.head()  # desc：打印输出前5行信息
@@ -1406,6 +1430,8 @@ class ICBHIDataset_with_event(Dataset):
 
         files = os.listdir(data_dir)
         for f in files:
+            if not f.lower().endswith('.wav'):
+                continue
             device = f.strip().split('_')[-1].split('.')[0]
             if device not in device_name_to_id:
                 device_name_to_id[device] = device_num

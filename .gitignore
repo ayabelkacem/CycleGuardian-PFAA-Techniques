@@ -1,0 +1,35 @@
+
+# Local data/outputs
+models_out/
+checkpoints/
+runs_log/
+__pycache__/
+*.pyc
+data/ICBHI_final_database/
+data/events/
+
+
+# Ignore python caches
+__pycache__/
+**/__pycache__/
+*.pyc
+
+
+# Ignore local envs
+.venv38/
+.venv/
+
+
+# Ignore generated outputs
+runs/
+runs_log/
+models_out/
+real_specs*/
+synthetic_specs*/
+acgan_cache/
+acgan_ckpts/
+
+
+# Ignore local split/data edits
+data/patient_trainTest6_4.txt
+

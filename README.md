@@ -161,4 +161,18 @@ ds combine best_Confusion_matrix:
 }
 ```
 
+## Training the ACGAN
+
+To train the ACGAN on your dataset, follow these steps:
+
+1. Ensure your dataset is placed in the `data/ICBHI_final_database` directory.
+2. Run the training script:
+
+```bash
+python train_acgan.py
+```
+
+3. After training, the generator and discriminator models will be saved as `generator.pth` and `discriminator.pth`.
+4. Visualize the generated samples to evaluate the model's performance.
+
 
